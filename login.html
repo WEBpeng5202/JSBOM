@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面跳转</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        body{
+            background-color: #51464b;
+            font-family: '微软雅黑 Light';
+        }
+        @keyframes dong {
+            0%{
+                background: #fff;
+            }
+            25%{
+                background: #f2dede;
+            }
+            50%{
+                background: #c7ddef;
+            }
+            75%{
+                background: #a6e1ec;
+            }
+            100%{
+                background: #f7f7f7;
+            }
+        }
+        #login{
+            width: 500px;
+            height: 300px;
+            background: #fff;
+            border-radius: 20px;
+            border-bottom-right-radius: 50px;
+            margin: 300px auto;
+            padding: 30px;
+            box-shadow: 0 0 20px 1px rgb(0, 0, 0) inset;
+        }
+        #login h1{
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        input{
+            width:100%;
+            height:50px;
+            border-radius: 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            font-size: 18px;
+            color: red;
+            background: #fff;
+            animation: dong 3s;
+            animation-iteration-count: infinite;
+            border: none;
+            transition: all 1s;
+        }
+        input:focus{
+            border: 1px solid #e5ff8d;
+            border-radius: 20px;
+            outline: none;
+            background: #c7ddef;
+            box-shadow: 0 0 20px 1px #fff inset;
+            animation: none;
+        }
+        input[type='submit']{
+            display: block;
+            width: 200px;
+            height:50px;
+            margin: 20px auto;
+            border-radius: 40px;
+            font-size: 18px;
+            color: #fff;
+            background: rgba(150, 145, 255, 0.53);
+            border: none;
+            outline: none;
+        }
+        label{
+            font-size:20px;
+            margin: 10px 0;
+            display: block;
+        }
+        p{
+            width: 80px;
+            height: 80px;
+            background: #ff000b;
+            font-size: 30px;
+            text-align: center;
+            color: #ffff00;
+            line-height: 80px;
+            border-radius: 100%;
+            position: fixed;
+            bottom:0;
+            right: 0;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>用户登陆</h1>
+        <!--<form action="">-->
+            <label for="username">用户名：</label>
+            <input type="text" placeholder="请输入用户名" name="username" class="username" id="username">
+            <label for="userpwd">密 &nbsp;&nbsp;码：</label>
+            <input type="password" placeholder="请输入密码" name="userpwd" class="userpwd" id="userpwd">
+            <input type="submit" value="坐好，准备出发！" class="submit">
+            <!--<button>坐好，准备出发！</button>-->
+        <!--</form>-->
+    </div>
+<p>
+    <a href="top.html">top页面跳转</a>
+</p>
+</body>
+</html>
+<script>
+    let userName=document.querySelector('.username');
+    let userPwd=document.querySelector('.userpwd');
+    let submit=document.querySelector('.submit');
+    submit.onclick=function () {
+
+        if (userName.value.trim() == 'admin' && userPwd.value.trim() == '123456'){
+            alert('恭喜您，登录成功！');
+        }else {
+            location.replace('error.html')
+        }
+    }
+
+</script>

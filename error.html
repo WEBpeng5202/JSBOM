@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        body{
+            background-color: #514624;
+            font-family: '微软雅黑 Light';
+        }
+        #login{
+            width: 500px;
+            height: 300px;
+            background: #fff;
+            border-radius: 20px;
+            border-bottom-right-radius: 50px;
+            margin: 300px auto;
+            padding: 30px;
+            box-shadow: 0 0 20px 1px rgb(0, 0, 0) inset;
+        }
+        #login h1{
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        button{
+            display: block;
+            width: 200px;
+            height:50px;
+            margin: 80px auto;
+            border-radius: 40px;
+            font-size: 18px;
+            color: #fff;
+            background: rgba(150, 145, 255, 0.53);
+            border: none;
+        }
+        p{
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+        }
+        p>span{
+            color: red;
+            font-weight: bold;
+            font-size: 26px;
+        }
+        h1{
+            color: #2b542c;
+        }
+    </style>
+</head>
+<body>
+<div id="login">
+    <h1>出错啦！</h1>
+    <p><span>8</span> s后我们返回起始地！</p>
+        <button value="坐好，准备返回！">坐好，准备返回！</button>
+
+</div>
+
+</body>
+</html>
+<script>
+    let span=document.querySelector('span');
+    let button=document.querySelector('button');
+    var num=7;
+    var t=setInterval(function () {
+        span.innerHTML=num;
+        num--;
+        if(num<0){
+            location.replace('login.html');
+        }
+    },1000)
+    button.onclick=function () {
+        location.replace('login.html')
+    }
+</script>

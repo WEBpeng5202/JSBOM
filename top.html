@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        div{
+            width: 80%;
+            height: 2000px;
+            border: 2px solid red;
+            margin: 0 auto;
+            font-size: 50px;
+            color: ##080808;
+        }
+        p{
+            width: 80px;
+            height: 80px;
+            background: #ff000b;
+            font-size: 30px;
+            text-align: center;
+            color: #ffff00;
+            line-height: 80px;
+            border-radius: 100%;
+            position: fixed;
+            bottom:0;
+            right: 0;
+            opacity: 0;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="scroll.html">滚动页面跳转<img src="" alt=""></a>
+    </div>
+    <p>
+        Top
+    </p>
+</body>
+</html>
+<script>
+
+    let Top=document.querySelector('p');
+
+    window.onscroll=function () {
+        if (window.scrollY >200 ){
+            Top.style.opacity=1;
+            Top.style.width="80px";
+//            Top.style.display='block';
+        }else {
+            Top.style.opacity=0;
+            Top.style.width="0";
+//            Top.style.display='none';
+        }
+    };
+    Top.onclick=function () {
+        let timer=setInterval(function () {
+            window.scrollBy(0,-20);
+            if (window.scrollY==0){
+                clearInterval(timer);
+            }
+        },20);
+
+
+    }
+
+</script>
